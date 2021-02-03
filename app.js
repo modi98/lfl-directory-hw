@@ -33,6 +33,11 @@ const deleteEmployee = function (name) {
   employeeList.splice(index, 1);
 }
 
+const navigateFromDrawer = function (route) {
+  navigate(route);
+  closeDrawer();
+};
+
 const navigate = function (route) {
   switch (route) {
     case 'view':
@@ -71,14 +76,37 @@ const loadNav = function () {
     </div>
 
     <div id="mobileNav">
-      <a onclick="navigate('view')" class="navlink">View</a>
-      <a onclick="navigate('add')" class="navlink">Add</a>
-      <a onclick="navigate('verify')" class="navlink">Verify</a>
-      <a onclick="navigate('update')" class="navlink">Update</a>
-      <a onclick="navigate('delete')" class="navlink">Delete</a>
+      <i id="iconOpenDrawer" class="fas fa-bars" onclick="openDrawer()"></i>
+      <i id="iconCloseDrawer" class="fas fa-times" onclick="closeDrawer()"></i>
     </div>
+
+    <div id="mobileNavMenu">
+      <a onclick="navigateFromDrawer('view')" class="navlink">View</a>
+      <a onclick="navigateFromDrawer('add')" class="navlink">Add</a>
+      <a onclick="navigateFromDrawer('verify')" class="navlink">Verify</a>
+      <a onclick="navigateFromDrawer('update')" class="navlink">Update</a>
+      <a onclick="navigateFromDrawer('delete')" class="navlink">Delete</a>
+    </div>
+
+    <div id="drawerOverlay" onclick="closeDrawer()"></div>
     `;
-}
+};
+
+const openDrawer = function () {
+  document.getElementById('mobileNavMenu').style.left = '0';
+  document.getElementById('drawerOverlay').style.display = 'block';
+  document.getElementById('iconOpenDrawer').style.display = 'none';
+  document.getElementById('iconCloseDrawer').style.display = 'inline-block';
+  document.body.style.overflow = 'hidden';
+};
+
+const closeDrawer = function () {
+  document.getElementById('mobileNavMenu').style.left = '-100vw';
+  document.getElementById('drawerOverlay').style.display = 'none';
+  document.getElementById('iconOpenDrawer').style.display = 'inline-block';
+  document.getElementById('iconCloseDrawer').style.display = 'none';
+  document.body.style.overflow = 'visible';
+};
 
 const hideMenus = function () {
   document.getElementById('add').classList.add('hidden-menu');
