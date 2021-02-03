@@ -3,7 +3,7 @@ const validateName = function () {
   if (!name) return;
 
   // This function is not key sensitive for better user experience
-  if (employeeList.some((e) => e.name.toLowerCase() === name.toLowerCase())) {
+  if (verifyEmployee(name)) {
     document.getElementById('searchResult').innerHTML = `${name} exists!`;
     clearInput();
   } else {

@@ -46,7 +46,8 @@ const loadEmployees = function (list) {
   const employeeListSection = document.getElementById('employeeList');
 
   employeeListSection.innerHTML = '';
-  list.reverse().forEach((e) => {
+  // Reverse the array not in place so we don't modify the existing one
+  list.slice().reverse().forEach((e) => {
     let row = `
     <div class="card">
       <p>${e.name}</p>
@@ -56,4 +57,16 @@ const loadEmployees = function (list) {
     `
     employeeListSection.innerHTML += row;
   });
-}
+};
+
+// Not key sensitive
+const verifyEmployee = function (name) {
+  return employeeList.some((e) => e.name.toLowerCase() === name.toLowerCase())
+};
+
+// Not key sensitive
+const updateEmployee = function (employee) {
+  const index = employeeList.findIndex((e) => e.name.toLowerCase() === employee.name.toLowerCase());
+  employeeList[index].officeNum = employee.officeNum;
+  employeeList[index].phoneNum = employee.phoneNum;
+};
