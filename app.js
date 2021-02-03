@@ -28,6 +28,11 @@ const updateEmployee = function (employee) {
   employeeList[index].phoneNum = employee.phoneNum;
 };
 
+const deleteEmployee = function (name) {
+  const index = employeeList.findIndex((e) => e.name.toLowerCase() === name.toLowerCase());
+  employeeList.splice(index, 1);
+}
+
 const navigate = function (route) {
   switch (route) {
     case 'view':

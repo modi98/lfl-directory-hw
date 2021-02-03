@@ -15,6 +15,7 @@
     <script src="./controllers/add.js"></script>
     <script src="./controllers/update.js"></script>
     <script src="./controllers/verify.js"></script>
+    <script src="./controllers/delete.js"></script>
     <nav id="nav"></nav>
     <main>
       <section class="hidden-menu" id="add">
@@ -29,7 +30,7 @@
 
       <section class="hidden-menu" id="verify">
         <div class="card">
-          <input id="nameInputVerify" type="text"><button onclick="validateName()">Search</button>
+          <input id="nameInputVerify" type="text"><button onclick="validateName()">Verify</button>
           <span id="errorMessageVerify"></span>
           <p id="searchResult">Type a name and search if it exists.</p>
         </div>
@@ -46,7 +47,11 @@
       </section>
 
       <section class="hidden-menu" id="delete">
-
+        <div class="card">
+          <input id="nameInputDelete" type="text" value=""><button onclick="deleteName()">Delete</button>
+          <span id="errorMessageDelete"></span>
+          <p id="deleteResult">Type a name to delete.</p>
+        </div>
       </section>
 
       <section id="employeeList"></section>
