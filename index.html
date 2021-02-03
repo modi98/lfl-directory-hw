@@ -23,12 +23,14 @@
           Office number: <input id="officeNumInput" class="add-input" type="number"><br>
           Phone number: <input id="phoneNumInput" class="add-input" type="text"><br>
           <button onclick="addEmployee()">Add employee</button>
+          <span id="errorMessageAdd"></span>
         </div>
       </section>
 
       <section class="hidden-menu" id="verify">
         <div class="card">
-          <input id="nameInputVerify" type="text"><button onclick="validateName()">Search</button><br>
+          <input id="nameInputVerify" type="text"><button onclick="validateName()">Search</button>
+          <span id="errorMessageVerify"></span>
           <p id="searchResult">Type a name and search if it exists.</p>
         </div>
       </section>
@@ -39,7 +41,7 @@
           Office number: <input id="officeNumInputUpdate" class="add-input" type="number"><br>
           Phone number: <input id="phoneNumInputUpdate" class="add-input" type="text"><br>
           <button onclick="updateData()">Update employee</button>
-          <span id="errorMessage"></span>
+          <span id="errorMessageUpdate"></span>
         </div>
       </section>
 

@@ -1,6 +1,10 @@
 const validateName = function () {
   const name = document.getElementById('nameInputVerify').value;
-  if (!name) return;
+  document.getElementById('errorMessageVerify').innerHTML = '';
+  if (!name) {
+    document.getElementById('errorMessageVerify').innerHTML = 'Invalid input!';
+    return;
+  };
 
   // This function is not key sensitive for better user experience
   if (verifyEmployee(name)) {

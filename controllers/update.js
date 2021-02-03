@@ -4,14 +4,14 @@ const updateData = function () {
   const phoneNum = document.getElementById('phoneNumInputUpdate').value;
 
   if (!name || !officeNum || !phoneNum) {
-    document.getElementById('errorMessage').innerHTML = 'Verify the data provided';
+    document.getElementById('errorMessageUpdate').innerHTML = 'Invalid input!';
   } else if (verifyEmployee(name)) {
     updateEmployee({name, officeNum, phoneNum});
     loadEmployees(employeeList);
     clearInputUpdate();
-    document.getElementById('errorMessage').innerHTML = '';
+    document.getElementById('errorMessageUpdate').innerHTML = '';
   } else {
-    document.getElementById('errorMessage').innerHTML = `${name} doesn't exist.`;
+    document.getElementById('errorMessageUpdate').innerHTML = `${name} doesn't exist.`;
   }
 };
 
