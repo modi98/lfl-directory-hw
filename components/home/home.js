@@ -1,4 +1,5 @@
 window.onload = function () {
+  loadNav();
   const employeeListSection = document.getElementById('employeeList');
 
   employeeList.forEach((e) => {
