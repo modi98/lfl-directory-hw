@@ -16,6 +16,4 @@ const loadNav = function () {
       <a href="" class="navlink">Delete</a>
     </div>
     `;
-}
-
-  
+}  
