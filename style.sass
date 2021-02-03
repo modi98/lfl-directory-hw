@@ -1,9 +1,33 @@
 ::root
   font-size: 16px
 
+body
+  font-family: 'Open Sans', sans-serif
+  padding: 0
+  margin: 0
+  background-color: #fff2e7
+
 #desktopNav
   display: flex
   justify-content: space-around
+  background: linear-gradient(to right, #3494e6, #ec6ead)
+  height: 5rem
+  box-shadow: 0 4px 8px 0 #a1a1a1
+  align-items: stretch
+  width: 100%
+  text-align: center
+  color: white
+
+  a
+    font-size: 1.3rem
+    font-weight: 700
+    cursor: pointer
+    transition: 0.3s ease
+    line-height: 5rem
+    flex: 1
+
+  a:hover
+    opacity: 0.5
 
 #mobileNav
   display: none
@@ -18,8 +42,37 @@
 .card
   box-shadow: 0 4px 8px 0 #a1a1a1
   transition: 0.3s
-  padding: 0.2rem
+  background-color: white
+  padding: 0.8rem
   margin: 0.5rem
+
+  .employee-info
+    margin: 0.5rem
+
+  .employee-info:first-child 
+    font-size: 1.3rem
+    font-weight: 700
+
+  .form-input
+    margin: 0 0 1.5rem
+    width: 100%
+    -webkit-appearance: none
+    display: block
+    font-size: 1rem
+    border: 1px solid #b8b8b8
+    outline: none
+  
+  .form-input:focus
+    border: 1px solid #337afd
+
+  .form-input::-webkit-outer-spin-button,
+  .form-input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+  .form-label
+    margin: 0
+    font-weight: 700
 
 .add-input
   font-size: 1rem
@@ -27,3 +80,21 @@
 
 .hidden-menu
   display: none
+
+.btn-primary
+  transition: 0.5s ease
+  cursor: pointer
+  border: 0px
+  border-radius: 0.35rem
+  background-color: #337afd
+  color: white
+  padding: 1rem
+  font-size: 1rem
+  outline: none
+
+.btn-primary:hover
+  background-color: #2363db
+
+.error-message
+  color: #ff0000
+  font-weight: 700

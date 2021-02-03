@@ -42,4 +42,4 @@ As of right now I'm not putting lots of effor on the styles, leaving that for th
 
 On the verify method value isn't keysensitive for better user experience, couldn't find any requirement for matching cases so I had to improvise. I've also added scalability to the function loadEmployees() if later we wanted to add list of all matching employees in the verify page.
 
-Decided to turn project into single page application it'll be easier for state management and communication between components, also makes project look cleaner.
+Decided to turn project into single page application as it'll be easier for state management and communication between components, also makes project look cleaner.

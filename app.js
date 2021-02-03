@@ -7,9 +7,9 @@ const loadEmployees = function (list) {
   list.slice().reverse().forEach((e) => {
     let row = `
     <div class="card">
-      <p>${e.name}</p>
-      <p>${e.officeNum}</p>
-      <p>${e.phoneNum}</p>
+      <p class="employee-info">${e.name}</p>
+      <p class="employee-info">${e.officeNum}</p>
+      <p class="employee-info">${e.phoneNum}</p>
     </div>
     `
     employeeListSection.innerHTML += row;

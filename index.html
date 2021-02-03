@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LFL Employee Directory</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -20,36 +22,50 @@
     <main>
       <section class="hidden-menu" id="add">
         <div class="card">
-          Name: <input id="nameInput" value="" class="add-input" type="text"><br>
-          Office number: <input id="officeNumInput" class="add-input" type="number"><br>
-          Phone number: <input id="phoneNumInput" class="add-input" type="text"><br>
-          <button onclick="addEmployee()">Add employee</button>
-          <span id="errorMessageAdd"></span>
+          <label class="form-label">Name:</label>
+          <input class="form-input" id="nameInput" value="" class="add-input" type="text">
+          
+          <label class="form-label">Office number:</label>
+          <input class="form-input" id="officeNumInput" class="add-input" type="number">
+          
+          <label class="form-label">Phone number:</label>
+          <input class="form-input" id="phoneNumInput" class="add-input" type="text">
+          
+          <button class="btn-primary" onclick="addEmployee()">Add employee</button>
+          <span class="error-message" id="errorMessageAdd"></span>
         </div>
       </section>
 
       <section class="hidden-menu" id="verify">
         <div class="card">
-          <input id="nameInputVerify" type="text"><button onclick="validateName()">Verify</button>
-          <span id="errorMessageVerify"></span>
+          <label class="form-label">Name:</label>
+          <input class="form-input"  id="nameInputVerify" type="text"><button class="btn-primary" onclick="validateName()">Verify</button>
+          <span class="error-message" id="errorMessageVerify"></span>
           <p id="searchResult">Type a name and search if it exists.</p>
         </div>
       </section>
 
       <section class="hidden-menu" id="update">
         <div class="card">
-          Name: <input id="nameInputUpdate" value="" class="add-input" type="text"><br>
-          Office number: <input id="officeNumInputUpdate" class="add-input" type="number"><br>
-          Phone number: <input id="phoneNumInputUpdate" class="add-input" type="text"><br>
-          <button onclick="updateData()">Update employee</button>
-          <span id="errorMessageUpdate"></span>
+          <label class="form-label">Name:</label>
+          <input class="form-input"  id="nameInputUpdate" value="" class="add-input" type="text">
+          
+          <label class="form-label">Office number:</label>
+          <input class="form-input"  id="officeNumInputUpdate" class="add-input" type="number">
+          
+          <label class="form-label">Phone number:</label>
+          <input class="form-input"  id="phoneNumInputUpdate" class="add-input" type="text">
+          
+          <button class="btn-primary" onclick="updateData()">Update employee</button>
+          <span class="error-message" id="errorMessageUpdate"></span>
         </div>
       </section>
 
       <section class="hidden-menu" id="delete">
         <div class="card">
-          <input id="nameInputDelete" type="text" value=""><button onclick="deleteName()">Delete</button>
-          <span id="errorMessageDelete"></span>
+          <label class="form-label">Name:</label>
+          <input class="form-input"  id="nameInputDelete" type="text" value=""><button class="btn-primary" onclick="deleteName()">Delete</button>
+          <span class="error-message" id="errorMessageDelete"></span>
           <p id="deleteResult">Type a name to delete.</p>
         </div>
       </section>
