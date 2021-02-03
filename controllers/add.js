@@ -9,16 +9,11 @@ const addEmployee = function () {
     phoneNum
   })
   loadEmployees(employeeList);
-  resetForm();
+  clearInputAdd();
 };
 
-const resetForm = function () {
+const clearInputAdd = function () {
   document.getElementById('nameInput').value = '';
   document.getElementById('officeNumInput').value = '';
   document.getElementById('phoneNumInput').value = '';
-};
-
-window.onload = function () {
-  loadNav();
-  loadEmployees(employeeList);
 };

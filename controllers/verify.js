@@ -1,21 +1,17 @@
 const validateName = function () {
-  const name = document.getElementById('nameInput').value;
+  const name = document.getElementById('nameInputVerify').value;
   if (!name) return;
 
   // This function is not key sensitive for better user experience
   if (verifyEmployee(name)) {
     document.getElementById('searchResult').innerHTML = `${name} exists!`;
-    clearInput();
+    clearInputVerify();
   } else {
     document.getElementById('searchResult').innerHTML = `${name} doesn't exist`;
-    clearInput();
+    clearInputVerify();
   }
 };
 
-const clearInput = function () {
+const clearInputVerify = function () {
   document.getElementById('nameInput').value = '';
-};
-
-window.onload = function () {
-  loadNav();
 };

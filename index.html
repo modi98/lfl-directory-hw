@@ -10,6 +10,44 @@
   </head>
 
   <body>
+    <script src="employee-list.js"></script>
     <script src="app.js"></script>
+    <script src="./controllers/add.js"></script>
+    <script src="./controllers/update.js"></script>
+    <script src="./controllers/verify.js"></script>
+    <nav id="nav"></nav>
+    <main>
+      <section class="hidden-menu" id="add">
+        <div class="card">
+          Name: <input id="nameInput" value="" class="add-input" type="text"><br>
+          Office number: <input id="officeNumInput" class="add-input" type="number"><br>
+          Phone number: <input id="phoneNumInput" class="add-input" type="text"><br>
+          <button onclick="addEmployee()">Add employee</button>
+        </div>
+      </section>
+
+      <section class="hidden-menu" id="verify">
+        <div class="card">
+          <input id="nameInputVerify" type="text"><button onclick="validateName()">Search</button><br>
+          <p id="searchResult">Type a name and search if it exists.</p>
+        </div>
+      </section>
+
+      <section class="hidden-menu" id="update">
+        <div class="card">
+          Name: <input id="nameInputUpdate" value="" class="add-input" type="text"><br>
+          Office number: <input id="officeNumInputUpdate" class="add-input" type="number"><br>
+          Phone number: <input id="phoneNumInputUpdate" class="add-input" type="text"><br>
+          <button onclick="updateData()">Update employee</button>
+          <span id="errorMessage"></span>
+        </div>
+      </section>
+
+      <section class="hidden-menu" id="delete">
+
+      </section>
+
+      <section id="employeeList"></section>
+    </main>
   </body>
 </html>
