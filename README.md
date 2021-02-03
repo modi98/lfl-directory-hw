@@ -36,3 +36,6 @@ Feel free to reach out to with any questions or for clarification.
 - MVC JS architecture
 
 ## Dev notes
+After some time working with JS Frameworks we sometimes forget our roots. Will try to mimic some of the structure I'm so used to see in this projects but on vanilla JS.
+
+As of right now I'm not putting lots of effor on the styles, leaving that for the final pushes.

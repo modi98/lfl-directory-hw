@@ -45,7 +45,8 @@ const employeeList = [
 const loadEmployees = function () {
   const employeeListSection = document.getElementById('employeeList');
 
-  employeeList.forEach((e) => {
+  employeeListSection.innerHTML = '';
+  employeeList.reverse().forEach((e) => {
     let row = `
     <div class="card">
       <p>${e.name}</p>
@@ -54,6 +55,5 @@ const loadEmployees = function () {
     </div>
     `
     employeeListSection.innerHTML += row;
-    console.log('henlo')
   });
 }
