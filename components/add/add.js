@@ -8,17 +8,17 @@ const addEmployee = function () {
     officeNum,
     phoneNum
   })
-  loadEmployees();
+  loadEmployees(employeeList);
   resetForm();
 };
 
 const resetForm = function () {
-  ocument.getElementById('nameInput').value = '';
+  document.getElementById('nameInput').value = '';
   document.getElementById('officeNumInput').value = '';
   document.getElementById('phoneNumInput').value = '';
 };
 
 window.onload = function () {
   loadNav();
-  loadEmployees();
+  loadEmployees(employeeList);
 };

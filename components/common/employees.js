@@ -42,11 +42,11 @@ const employeeList = [
 ];
 
 
-const loadEmployees = function () {
+const loadEmployees = function (list) {
   const employeeListSection = document.getElementById('employeeList');
 
   employeeListSection.innerHTML = '';
-  employeeList.reverse().forEach((e) => {
+  list.reverse().forEach((e) => {
     let row = `
     <div class="card">
       <p>${e.name}</p>

@@ -39,3 +39,5 @@ Feel free to reach out to with any questions or for clarification.
 After some time working with JS Frameworks we sometimes forget our roots. Will try to mimic some of the structure I'm so used to see in this projects but on vanilla JS.
 
 As of right now I'm not putting lots of effor on the styles, leaving that for the final pushes.
+
+On the verify method value isn't keysensitive for better user experience, couldn't find any requirement for matching cases so I had to improvise. I've also added scalability to the function loadEmployees() if later we wanted to add list of all matching employees in the verify page.
