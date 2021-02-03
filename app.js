@@ -18,7 +18,7 @@ const loadEmployees = function (list) {
 
 // Not key sensitive
 const verifyEmployee = function (name) {
-  return employeeList.some((e) => e.name.toLowerCase() === name.toLowerCase())
+  return employeeList.some((e) => e.name.toLowerCase() === name.toLowerCase());
 };
 
 // Not key sensitive
@@ -31,65 +31,11 @@ const updateEmployee = function (employee) {
 const deleteEmployee = function (name) {
   const index = employeeList.findIndex((e) => e.name.toLowerCase() === name.toLowerCase());
   employeeList.splice(index, 1);
-}
+};
 
 const navigateFromDrawer = function (route) {
   navigate(route);
   closeDrawer();
-};
-
-const navigate = function (route) {
-  switch (route) {
-    case 'view':
-      hideMenus();
-      break;
-    case 'add':
-      hideMenus();
-      document.getElementById('add').classList.remove('hidden-menu');
-      break;
-    case 'verify':
-      hideMenus();
-      document.getElementById('verify').classList.remove('hidden-menu');
-      break;
-    case 'update':
-      hideMenus();
-      document.getElementById('update').classList.remove('hidden-menu');
-      break;
-    case 'delete':
-      hideMenus();
-      document.getElementById('delete').classList.remove('hidden-menu');
-      break;
-    default:
-      hideMenus();
-      break;
-  }
-};
-
-const loadNav = function () {
-  document.getElementById('nav').innerHTML = `
-    <div id="desktopNav">
-      <a onclick="navigate('view')" class="navlink">View</a>
-      <a onclick="navigate('add')" class="navlink">Add</a>
-      <a onclick="navigate('verify')" class="navlink">Verify</a>
-      <a onclick="navigate('update')" class="navlink">Update</a>
-      <a onclick="navigate('delete')" class="navlink">Delete</a>
-    </div>
-
-    <div id="mobileNav">
-      <i id="iconOpenDrawer" class="fas fa-bars" onclick="openDrawer()"></i>
-      <i id="iconCloseDrawer" class="fas fa-times" onclick="closeDrawer()"></i>
-    </div>
-
-    <div id="mobileNavMenu">
-      <a onclick="navigateFromDrawer('view')" class="navlink">View</a>
-      <a onclick="navigateFromDrawer('add')" class="navlink">Add</a>
-      <a onclick="navigateFromDrawer('verify')" class="navlink">Verify</a>
-      <a onclick="navigateFromDrawer('update')" class="navlink">Update</a>
-      <a onclick="navigateFromDrawer('delete')" class="navlink">Delete</a>
-    </div>
-
-    <div id="drawerOverlay" onclick="closeDrawer()"></div>
-    `;
 };
 
 const openDrawer = function () {
@@ -108,14 +54,37 @@ const closeDrawer = function () {
   document.body.style.overflow = 'visible';
 };
 
-const hideMenus = function () {
-  document.getElementById('add').classList.add('hidden-menu');
-  document.getElementById('verify').classList.add('hidden-menu');
-  document.getElementById('update').classList.add('hidden-menu');
-  document.getElementById('delete').classList.add('hidden-menu');
+const navigate = function (route) {
+  let url;
+  switch (route) {
+    case 'view':
+      document.getElementById("view").innerHTML = '';
+      return;
+    case 'add':
+      url = 'views/add.html';
+      break;
+    case 'verify':
+      url = 'views/verify.html';
+      break;
+    case 'update':
+      url = 'views/update.html';
+      break;
+    case 'delete':
+      url = 'views/delete.html';
+      break;
+    default:;
+      document.getElementById("view").innerHTML = '';
+      return;
+  }
+
+  let client = new XMLHttpRequest();
+  client.open('GET', url);
+  client.onreadystatechange = () => {
+    document.getElementById("view").innerHTML=client.responseText;
+  }
+  client.send();
 };
 
 window.onload = function () {
-  loadNav();
   loadEmployees(employeeList);
 };

@@ -1,6 +1,8 @@
 const validateName = function () {
   const name = document.getElementById('nameInputVerify').value;
+  
   document.getElementById('errorMessageVerify').innerHTML = '';
+
   if (!name) {
     document.getElementById('errorMessageVerify').innerHTML = 'Invalid input!';
     return;
@@ -17,5 +19,5 @@ const validateName = function () {
 };
 
 const clearInputVerify = function () {
-  document.getElementById('nameInput').value = '';
+  document.getElementById('nameInputVerify').value = '';
 };

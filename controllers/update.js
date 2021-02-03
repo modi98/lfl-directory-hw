@@ -3,6 +3,8 @@ const updateData = function () {
   const officeNum = document.getElementById('officeNumInputUpdate').value;
   const phoneNum = document.getElementById('phoneNumInputUpdate').value;
 
+  document.getElementById('errorMessageUpdate').innerHTML = '';
+  
   if (!name || !officeNum || !phoneNum) {
     document.getElementById('errorMessageUpdate').innerHTML = 'Invalid input!';
   } else if (verifyEmployee(name)) {
@@ -16,7 +18,7 @@ const updateData = function () {
 };
 
 const clearInputUpdate = function () {
-  document.getElementById('nameInput').value = '';
-  document.getElementById('officeNumInput').value = '';
-  document.getElementById('phoneNumInput').value = '';
+  document.getElementById('nameInputUpdate').value = '';
+  document.getElementById('officeNumInputUpdate').value = '';
+  document.getElementById('phoneNumInputUpdate').value = '';
 };

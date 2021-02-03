@@ -13,7 +13,7 @@ const addEmployee = function () {
     name,
     officeNum,
     phoneNum
-  })
+  });
   loadEmployees(employeeList);
   clearInputAdd();
 };
