@@ -1,4 +1,4 @@
-// Your work here  
+// Your work here 
 const loadEmployees = function (list) {
   const employeeListSection = document.getElementById('employeeList');
 
